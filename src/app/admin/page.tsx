@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import AddProductModal from '../components/AddProductModal';
 
-const API_BASE_URL = 'http://localhost:4000/api';
+const API_BASE_URL = 'https://backenddummy.railway.internal/api';
 
 interface Product {
   id: number;
@@ -33,7 +33,7 @@ export default function AdminDashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [error, setError] = useState('');
   const [filterStatus, setFilterStatus] = useState('All');
-  
+
   const router = useRouter();
 
   const fetchData = async () => {
@@ -335,8 +335,8 @@ export default function AdminDashboard() {
                     key={status}
                     onClick={() => setFilterStatus(status)}
                     className={`rounded-lg px-4 py-1.5 text-xs font-semibold tracking-wide transition-all ${filterStatus === status
-                        ? 'bg-white text-black font-bold shadow-md shadow-white/5'
-                        : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                      ? 'bg-white text-black font-bold shadow-md shadow-white/5'
+                      : 'text-neutral-400 hover:text-white hover:bg-white/5'
                       }`}
                   >
                     {status === 'All' ? 'Semua' : status}
@@ -435,10 +435,10 @@ export default function AdminDashboard() {
                           {/* Status Badge */}
                           <td className="px-6 py-4 text-center">
                             <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider border backdrop-blur-md ${order.status === 'Completed'
-                                ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                                : order.status === 'Cancelled'
-                                  ? 'bg-red-500/10 text-red-400 border-red-500/20'
-                                  : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                              ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                              : order.status === 'Cancelled'
+                                ? 'bg-red-500/10 text-red-400 border-red-500/20'
+                                : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
                               }`}>
                               {order.status}
                             </span>

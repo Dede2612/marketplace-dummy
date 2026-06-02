@@ -87,7 +87,7 @@ export default function BuyProductModal({ isOpen, product, onClose, onBuySuccess
     setError('');
 
     try {
-      const res = await fetch('http://localhost:4000/api/orders', {
+      const res = await fetch('https://backenddummy.railway.internal/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -103,7 +103,7 @@ export default function BuyProductModal({ isOpen, product, onClose, onBuySuccess
       }
 
       const orderResult = await res.json();
-      
+
       // Simpan data sukses untuk dirender sebagai struk pembelian premium
       setSuccessData({
         orderId: orderResult.id,
@@ -128,12 +128,12 @@ export default function BuyProductModal({ isOpen, product, onClose, onBuySuccess
 
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fade-in">
-      
+
       {/* Glow effect behind modal */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[450px] w-[450px] rounded-full bg-violet-600/10 blur-[130px]" />
 
       <div className="bg-zinc-950 border border-white/[0.08] rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden relative transition-all duration-300">
-        
+
         {/* Modal Header */}
         <div className="px-6 py-5 border-b border-white/[0.06] flex justify-between items-center bg-white/[0.01]">
           <div>
@@ -158,7 +158,7 @@ export default function BuyProductModal({ isOpen, product, onClose, onBuySuccess
         {successData ? (
           /* Premium Purchase Receipt Screen */
           <div className="p-6 space-y-6 animate-scale-up text-center">
-            
+
             {/* Success Checkmark Ring */}
             <div className="flex justify-center">
               <div className="h-16 w-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center text-emerald-400 scale-110">
@@ -210,7 +210,7 @@ export default function BuyProductModal({ isOpen, product, onClose, onBuySuccess
         ) : (
           /* Input Form Screen */
           <form onSubmit={handleSubmit} className="p-6 space-y-5">
-            
+
             {/* Error Message */}
             {error && (
               <div className="rounded-2xl border border-red-500/10 bg-red-500/5 p-4 text-xs text-red-400 flex items-start gap-2.5">
@@ -274,7 +274,7 @@ export default function BuyProductModal({ isOpen, product, onClose, onBuySuccess
 
             {/* Counter Section and Real-Time Total Price */}
             <div className="grid grid-cols-2 gap-4 items-center border-t border-white/[0.06] pt-4">
-              
+
               {/* Order Quantity Counter */}
               <div className="space-y-1.5">
                 <label className="block text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
