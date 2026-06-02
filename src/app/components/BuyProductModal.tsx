@@ -87,7 +87,7 @@ export default function BuyProductModal({ isOpen, product, onClose, onBuySuccess
     setError('');
 
     try {
-      const res = await fetch('https://backenddummy.railway.internal/api/orders', {
+      const res = await fetch('https://backenddummy-production-9b1f.up.railway.app/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

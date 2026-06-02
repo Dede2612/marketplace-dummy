@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import AddProductModal from '../components/AddProductModal';
 
-const API_BASE_URL = 'https://backenddummy.railway.internal/api';
+const API_BASE_URL = 'https://backenddummy-production-9b1f.up.railway.app/api';
 
 interface Product {
   id: number;

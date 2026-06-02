@@ -48,7 +48,7 @@ export default function AddProductModal({ isOpen, onClose, onProductAdded }: Add
     setLoading(true);
 
     try {
-      const res = await fetch("https://backenddummy.railway.internal/api/products", {
+      const res = await fetch("https://backenddummy-production-9b1f.up.railway.app/api/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

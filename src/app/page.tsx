@@ -5,7 +5,7 @@ import ProductCard, { Product } from './components/ProductCard';
 import AddProductModal from './components/AddProductModal';
 import BuyProductModal from './components/BuyProductModal';
 
-const API_BASE_URL = 'https://backenddummy.railway.internal/api';
+const API_BASE_URL = 'https://backenddummy-production-9b1f.up.railway.app/api';
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
